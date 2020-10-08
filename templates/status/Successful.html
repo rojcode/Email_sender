@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+{% block title %}
+    Email sent successfully.
+{% endblock %}
+
+{% block content %}
+    <section class="u-clearfix u-grey-80 u-section-3" id="sec-04ed">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-align-center u-border-radius-17 u-container-style u-group u-palette-4-dark-2 u-shape-round u-group-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                    {% if sent %}
+                        <h3 class="u-text u-text-default u-text-1">Email sent successfully.</h3>
+                        <p class="u-text u-text-default u-text-2">to {{ cd.to }}</p>
+                    {% else %}
+                        <h3 class="u-text u-text-default u-text-1">Error.</h3>
+                        <p class="u-text u-text-default u-text-2">to {{ cd.to }}</p>
+                    {% endif %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

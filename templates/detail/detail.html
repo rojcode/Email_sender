@@ -1,0 +1,52 @@
+{% extends "home.html" %}
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+{% block content %}
+    <section class="u-align-left u-clearfix u-grey-80 u-section-2" id="carousel_e6df">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                            <div class="u-container-layout u-container-layout-1">
+                                <h2 class="u-text u-text-default u-text-1">Share</h2>
+                                <div class="u-form u-form-1">
+                                    <form action="#" method="POST"
+                                          class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form"
+                                          style="padding: 10px" source="custom" name="form" redirect="true">
+                                        <input type="hidden" id="siteId" name="siteId" value="237397657">
+                                        <input type="hidden" id="pageId" name="pageId" value="942602135">
+                                        <div class="u-form-group u-form-name u-form-group-1">
+                                            {% csrf_token %}
+                                            {{ form.as_p }}
+                                        </div>
+                                        <div class="u-align-left u-form-group u-form-submit u-form-group-4">
+                                            <button type="submit"
+                                                    class="u-border-radius-17 u-btn u-btn-round u-btn-submit u-button-style u-palette-4-dark-2 u-btn-1">Send
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                            <div class="u-container-layout u-valign-middle u-container-layout-2">
+                                <div class="u-align-center u-container-style u-expanded-width u-grey-75 u-group u-group-1">
+                                    <div class="u-container-layout u-container-layout-3">
+                                        <img src="{{ post.image.url }}" alt="{{ post.title }}"
+                                             class="u-border-radius-25 u-expanded-width u-image u-image-round u-image-1"
+                                             data-image-width="1600" data-image-height="900">
+                                        <h3 class="u-text u-text-default u-text-2">{{ post.title }}</h3>
+                                        <p class="u-text u-text-default u-text-3">{{ post.des }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
